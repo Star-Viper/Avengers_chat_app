@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web app</title>
+    <link rel="stylesheet" href="/style.css">
+    
+</head>
+<body>
+  <div id="avatarModal" class="modal">
+    <div class="modal-content">
+      <h2>Select Your Avatar</h2>
+      <div class="avatar-options"></div>
+    </div>
+  </div>
+
+  
+  <section class="chatsection" style="display: none;">
+    <div class="brand">
+        <!-- <img class="logo" src="/logo2.png" alt="" srcset=""> -->
+        <h1>ironchamber</h1>
+    </div>
+
+    <div class="messagearea"></div>
+
+    <div class="input-area">
+        <textarea id="textarea" cols="30" rows="1" placeholder="Write something...."></textarea>
+        <div id="thorGifContainer" style="display: none;">
+            <img id="thorGif" src="/thor.gif" alt="Thor GIF">
+        </div>
+    </div>
+    <!-- Add attachment button -->
+<button onclick="openFileExplorer()">Attach File</button>
+
+<!-- File input element, initially hidden -->
+<input type="file" id="fileInput" style="display: none;" onchange="sendFile(this.files)">
+
+<!-- Modal for file exploration -->
+<div id="fileExplorerModal" class="modal" style="display: none;">
+    <div class="modal-content">
+        <h2>Select File to Send</h2>
+        <input type="file" id="fileInputModal" onchange="sendFile(this.files)">
+    </div>
+</div>
+
+  </section>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/client.js"></script>
+</body>
+</html>
